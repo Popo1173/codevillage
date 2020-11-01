@@ -1,0 +1,302 @@
+//フォント関連
+$ft-B: #000;
+$ft-C: #fff;
+$head-text:　"Roboto", sans-serif;
+$copy-text : "'ヒラギノ角ゴ Pro W3", "HG明朝E", "ＭＳ Ｐ明朝",  sans-serif;
+$copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", sans-serif;
+
+
+//キービジュアルエリア
+.first-v {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: url("../img/mv-component.png") no-repeat;
+  background-position: right 0 top 0;
+  @include tab {
+    background-position: center;
+    background-size:cover;
+  }
+  p {
+    position: absolute;
+    top: 33%;
+    left: 12%;
+    font-size: 3.8rem;
+    font-family : $copy-maintext;
+    transform: translate(50px,20px);
+    letter-spacing: 3.8px;
+    color: $ft-B;
+    @include tab {
+      color: #fff;
+      font-size: 3.0rem;
+      top: 60%;
+      left: 0%;
+    }
+    + p {
+      transform: translate(0,250%);
+      text-align: left;
+      font-family: "Zapfino", sans-serif;
+      letter-spacing: 3.8px;
+      color: $ft-B;
+      opacity: 1;
+      @include tab {
+        color: #fff;
+        font-size: 2.0rem;
+        top: 60%;
+        left: 10%;
+      }      
+      
+    }
+  }
+}
+
+//h2の見出し
+@mixin head-txt {
+    margin-bottom: 10px;
+    color: #707070;
+    letter-spacing: 5.4px;
+    font-size: 1.8rem;
+    font-family: 'Roboto Mono', monospace;
+    @include tab {
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    &:after {
+      display: inline-block;
+      width: 90px;
+      margin-left: 20px;
+      margin-bottom: 5px;
+      align-items: center;
+      content: "";
+      border-top: 1px solid #707070;  
+      align-items: center;  
+      @include tab {
+       display: block;
+       width: 50%;
+       margin: 20px auto;
+      } 
+
+  }
+}
+//コンテンツインナー
+@mixin content-inner {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+//コンセプトエリア
+.concept-area {
+  padding: 250px 10px 65px;
+  background: linear-gradient(180deg, #A193861F 400px,#A193861F 0%, #A1938689 0%, #A1938689 10%); 
+  @include tab {
+    padding: 100px 10px;
+  }
+  .concept_inner {
+    @include content-inner;
+  }
+  h2 {
+    @include head-txt;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    @include tab {
+      display: block;
+    }
+    li:first-child {
+      margin-right: 25px;
+      @include tab {
+        margin-right: 0;
+      }      
+    }
+  }
+  dl {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 65px;
+    color: $ft-C;
+    @include tab {
+      margin-top: 30px;;
+      display: block;
+    }       
+    dt {
+      margin-right: 50px;
+      padding-left: 74px;
+      font-family : $copy-maintext;
+      font-size: 4.0rem; 
+      letter-spacing: 16px;
+      @include tab {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }        
+    }
+    dd {
+      max-width: 422px;
+      font-family: $copy-text;
+      @include tab {
+        max-width: 100%;
+        padding: 30px 10px;
+        
+      }         
+    }   
+    }
+}
+
+//メニューエリア
+.nenu-area {
+  padding: 100px 10px 70px;
+  .nenu_inner {
+    @include content-inner;
+    h2 {
+      @include head-txt;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      @include tab {
+        display: block;        
+      }        
+      li  {
+        width: 274px;
+        height: auto;
+        @include tab {
+          width: 100%;
+        }           
+        &:nth-child(2) {
+          margin: 0 10%;
+          @include tab {
+            margin: 30px 0;
+          }
+        }
+        dl {
+          font-family: $head-text;
+          dt {
+            padding: 37px 0 34px;
+            font-size: 3.0rem;
+            text-align: center;
+            }
+            dd {
+              padding: 0 15px;
+              span {
+                display: block;
+                text-align: right;
+                margin-top: 34px;
+                padding-right: 15px;
+                @include tab {
+                  padding-right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //コンセプトエリア
+.access-area {
+  padding: 100px 0 70px;
+  background-color: #A193861F;
+  .access-inner {
+    @include content-inner;
+    h2 {
+      @include head-txt;
+      padding: 0 10px;
+    }
+  }
+  //マップエリア
+  .map-area {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 104px;
+    background-color: #D0C5BA;
+    align-items: center;
+    @include tab {
+      display: block;
+      padding-left: 0;
+    }
+    .map-info {
+      width: 400px;
+      margin-right: 193px;
+      color: $ft-C;
+      @include tab {
+        margin: 0 auto;
+        padding: 30px 0;
+        text-align: center;
+      }
+      h3 {
+        margin-bottom: 30px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: #00000038;
+      }
+      ul li {
+        margin-bottom: 20px;
+        @include tab {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .map-block {
+      width: 100%;
+      height: 450px;
+    }
+  }
+}
+//フッター
+footer {
+  padding: 170px 10px 0px;
+  .footer-inner {
+    position: relative;
+    @include content-inner;
+    padding: 60px 0;
+    border-top: 1px solid #00000038;
+    @include tab {
+      padding: 30px 0 0;
+    }
+    h1 {
+      display: inline-block;
+      font-size: 3.2rem;
+      color: #7070704D;
+      margin-right: 10px;
+      @include tab{
+        width: 100%;
+        margin: 30px auto 0;
+        text-align: center;
+      }
+      i:first-child {
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+      i {
+        color: $ft-B;
+        vertical-align: 5px;
+        font-size: 2.0rem;
+      }
+    }
+    button {
+      position: absolute;
+      right: 0;
+      max-width: 184px;
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #707070;
+      font-size: 1.8rem;
+      color: #707070;
+      text-align: center;
+      :hover {
+        background-color: #707070;
+        color: #fff;
+      }         
+      @include tab {
+        display: block;
+        position: inherit;
+        max-width: none;
+      }
+    }
+  }
+}

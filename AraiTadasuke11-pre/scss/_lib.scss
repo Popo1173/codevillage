@@ -1,0 +1,36 @@
+@mixin PC {
+    @media screen and (min-width: 960px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (max-width: 995px) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+
+html {
+    font-size: 62.5%; //10px
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.67;
+    font-family: 'Roboto Mono', monospace;
+}
+
+img {
+    width: 100%;
+}
+
+main {
+    overflow-x: hidden;
+}
