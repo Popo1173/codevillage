@@ -14,8 +14,11 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
   background: url("../img/mv-component.png") no-repeat;
   background-position: right 0 top 0;
   @include tab {
-    background-position: center;
+    background-position: top 0 left 0;
     background-size:cover;
+    max-height: 597px;
+    height: 100vh; 
+    text-shadow: 0 3px 16px #000;
   }
   p {
     position: absolute;
@@ -28,9 +31,9 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
     color: $ft-B;
     @include tab {
       color: #fff;
-      font-size: 3.0rem;
-      top: 60%;
-      left: 0%;
+      font-size: 2.3rem;
+      top: 45%;
+      left: 8%;
     }
     + p {
       transform: translate(0,250%);
@@ -41,11 +44,10 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
       opacity: 1;
       @include tab {
         color: #fff;
-        font-size: 2.0rem;
-        top: 60%;
-        left: 10%;
+        font-size: 2.8rem;
+        top: 115px;
+        left: 7%;
       }      
-      
     }
   }
 }
@@ -57,10 +59,9 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
     letter-spacing: 5.4px;
     font-size: 1.8rem;
     font-family: 'Roboto Mono', monospace;
-    @include tab {
+    @include tab {      
       margin-bottom: 50px;
-      font-size: 2.5rem;
-      text-align: center;
+      font-size: 1.8rem;
     }
     &:after {
       display: inline-block;
@@ -71,10 +72,9 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
       content: "";
       border-top: 1px solid #707070;  
       align-items: center;  
-      @include tab {
-       display: block;
-       width: 50%;
-       margin: 20px auto;
+      @include tab {       
+       width: 44px;
+       margin-left: 22px;
       } 
 
   }
@@ -91,7 +91,8 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
   padding: 250px 10px 65px;
   background: linear-gradient(180deg, #A193861F 400px,#A193861F 0%, #A1938689 0%, #A1938689 10%); 
   @include tab {
-    padding: 100px 10px;
+    padding: 60px 20px 30px;
+    background: linear-gradient(180deg, #A193861F 176px,#A193861F 0%, #A1938689 0%, #A1938689 10%); 
   }
   .concept_inner {
     @include content-inner;
@@ -103,12 +104,26 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
     display: flex;
     justify-content: center;
     @include tab {
-      display: block;
+      
+    }
+    li {
+      @include tab {
+      min-width: 164px;
+      min-height: 205px;
+      img {
+        width: 100%;
+        height: 205px;
+        object-fit: cover;
+      }
+      }      
     }
     li:first-child {
       margin-right: 25px;
       @include tab {
-        margin-right: 0;
+        margin-right: 7px;
+        img {
+          object-position: 88% 100%;
+        }
       }      
     }
   }
@@ -130,6 +145,8 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
       @include tab {
         margin: 0;
         padding: 0;
+        font-size: 1.8rem;
+        letter-spacing: 7.2px;
         text-align: center;
       }        
     }
@@ -148,6 +165,9 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
 //メニューエリア
 .nenu-area {
   padding: 100px 10px 70px;
+  @include tab {
+    padding: 60px 10px 65px;
+  }  
   .nenu_inner {
     @include content-inner;
     h2 {
@@ -164,7 +184,12 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
         height: auto;
         @include tab {
           width: 100%;
-        }           
+        }
+        a {
+          &:hover {
+            img {transform: rotateZ( 90deg ) ;}
+        }
+        }
         &:nth-child(2) {
           margin: 0 10%;
           @include tab {
@@ -177,6 +202,10 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
             padding: 37px 0 34px;
             font-size: 3.0rem;
             text-align: center;
+            @include tab {
+              padding: 30px 15px;
+              text-align: left;
+            }            
             }
             dd {
               padding: 0 15px;
@@ -199,11 +228,17 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
 .access-area {
   padding: 100px 0 70px;
   background-color: #A193861F;
+  @include tab {
+    padding: 60px 0 65px;
+  }
   .access-inner {
     @include content-inner;
     h2 {
       @include head-txt;
       padding: 0 10px;
+      @include tab {
+        padding: 0 20px;
+      }
     }
   }
   //マップエリア
@@ -215,7 +250,8 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
     background-color: #D0C5BA;
     align-items: center;
     @include tab {
-      display: block;
+      display: flex;
+      flex-direction: column-reverse;
       padding-left: 0;
     }
     .map-info {
@@ -224,8 +260,8 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
       color: $ft-C;
       @include tab {
         margin: 0 auto;
-        padding: 30px 0;
-        text-align: center;
+        padding: 30px 20px 60px;
+        text-align: left;
       }
       h3 {
         margin-bottom: 30px;
@@ -249,6 +285,9 @@ $copy-maintext : "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS
 //フッター
 footer {
   padding: 170px 10px 0px;
+  @include tab {
+    padding: 65px 10px 0;
+  }
   .footer-inner {
     position: relative;
     @include content-inner;
@@ -265,11 +304,16 @@ footer {
       @include tab{
         width: 100%;
         margin: 30px auto 0;
-        text-align: center;
+        padding: 20px 0;
+        text-align: left;
+        font-size: 1.8rem;
       }
       i:first-child {
         padding-left: 10px;
         padding-right: 5px;
+        @include tab{
+          padding-left: 120px;
+        }
       }
       i {
         color: $ft-B;
@@ -284,13 +328,18 @@ footer {
       width: 100%;
       padding: 10px;
       background-color: #fff;
-      border: 1px solid #707070;
+      border-bottom: 5px solid #707070;
       font-size: 1.8rem;
       color: #707070;
       text-align: center;
-      :hover {
-        background-color: #707070;
-        color: #fff;
+      @include tab{
+        width: 184px;
+        margin: 0 auto;
+      }
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #707070;
+        transform: translateY(4px);
       }         
       @include tab {
         display: block;

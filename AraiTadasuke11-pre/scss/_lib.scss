@@ -5,17 +5,10 @@
 }
 
 @mixin tab {
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
         @content;
     }
 }
-
-@mixin sp {
-    @media screen and (max-width: 600px) {
-        @content;
-    }
-}
-
 
 html {
     font-size: 62.5%; //10px

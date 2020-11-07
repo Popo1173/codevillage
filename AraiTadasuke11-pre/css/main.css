@@ -117,71 +117,120 @@ header {
   left: 9%;
   display: flex;
   z-index: 10; }
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 959px) {
     header {
-      top: 5%;
-      left: 5%; } }
+      position: inherit;
+      height: 70px;
+      background-color: #fff; } }
+
+input {
+  display: none; }
 
 .hd-logo {
   font-size: 3.8rem;
   font-family: 　 "Roboto", sans-serif;
   letter-spacing: 4px; }
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 959px) {
     .hd-logo {
-      color: #fff;
-      font-size: 4.0625vw; } }
+      padding: 24px 0 24px 21px;
+      font-size: 2.2rem;
+      color: #000;
+      line-height: 1.0; } }
 
 nav {
   margin-top: 15px;
   margin-left: 20px; }
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 959px) {
     nav {
-      background-color: #fff;
-      box-sizing: border-box;
-      height: 100%;
-      padding: 10px 40px;
-      position: fixed;
-      right: -300px;
-      top: 0;
-      transition: transform 0.3s linear 0s;
-      width: 300px;
-      z-index: 1000; } }
-  @media screen and (max-width: 995px) {
-    nav::before {
-      border-radius: 0 0 0 10px;
-      background-color: #fff;
-      color: #333;
-      content: "≡";
-      display: block;
-      font-size: 50px;
-      height: 50px;
-      line-height: 50px;
       position: absolute;
-      right: 100%;
-      text-align: center;
-      top: 25px;
-      width: 50px; } }
-  nav:hover {
-    transform: translate(-300px);
-    /*メニュー横幅①と合わせる*/ }
+      top: 5px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 0;
+      margin-left: 0; }
+      nav label {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1000; }
+      nav span {
+        width: 16px;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        right: 15px;
+        transition: .3s;
+        z-index: 100; }
+      nav .span1 {
+        top: 20px; }
+      nav .span2 {
+        top: 27px; }
+      nav .span3 {
+        top: 34px;
+        right: 20px;
+        width: 10px; }
+      nav #check:checked ~ .span2 {
+        display: none; }
+      nav #check:checked ~ .span1 {
+        width: 27px;
+        transform: rotate(45deg);
+        top: 27px;
+        right: 12px; }
+      nav #check:checked ~ .span3 {
+        width: 27px;
+        transform: rotate(-45deg);
+        top: 27px;
+        right: 12px; }
+      nav #check:checked ~ ul {
+        right: 0; }
+      nav #check {
+        display: none; } }
   nav ul {
     display: flex;
     align-items: center;
     color: #707070; }
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
       nav ul {
-        display: block; } }
-    nav ul li:first-child {
-      color: #000;
-      text-decoration: underline; }
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 80%;
+        height: 100%;
+        padding: 50px;
+        background-color: #fff;
+        transition: 1s; } }
     nav ul li {
       margin-right: 3%;
       font-size: 1.8rem; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         nav ul li {
           margin-bottom: 20px; } }
+      nav ul li a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none; }
+        nav ul li a::after {
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #333;
+          transform: scale(0, 1);
+          transition: transform .3s; }
+        nav ul li a:hover {
+          color: #000; }
+          nav ul li a:hover::after {
+            transform: scale(1, 1); }
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 959px) {
   #menu-background {
     background-color: #333;
     display: block;
@@ -200,10 +249,13 @@ nav {
   height: 800px;
   background: url("../img/mv-component.png") no-repeat;
   background-position: right 0 top 0; }
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 959px) {
     .first-v {
-      background-position: center;
-      background-size: cover; } }
+      background-position: top 0 left 0;
+      background-size: cover;
+      max-height: 597px;
+      height: 100vh;
+      text-shadow: 0 3px 16px #000; } }
   .first-v p {
     position: absolute;
     top: 33%;
@@ -213,12 +265,12 @@ nav {
     transform: translate(50px, 20px);
     letter-spacing: 3.8px;
     color: #000; }
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
       .first-v p {
         color: #fff;
-        font-size: 3.0rem;
-        top: 60%;
-        left: 0%; } }
+        font-size: 2.3rem;
+        top: 45%;
+        left: 8%; } }
     .first-v p + p {
       transform: translate(0, 250%);
       text-align: left;
@@ -226,19 +278,20 @@ nav {
       letter-spacing: 3.8px;
       color: #000;
       opacity: 1; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .first-v p + p {
           color: #fff;
-          font-size: 2.0rem;
-          top: 60%;
-          left: 10%; } }
+          font-size: 2.8rem;
+          top: 115px;
+          left: 7%; } }
 
 .concept-area {
   padding: 250px 10px 65px;
   background: linear-gradient(180deg, #A193861F 400px, #A193861F 0%, #A1938689 0%, #A1938689 10%); }
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 959px) {
     .concept-area {
-      padding: 100px 10px; } }
+      padding: 60px 20px 30px;
+      background: linear-gradient(180deg, #A193861F 176px, #A193861F 0%, #A1938689 0%, #A1938689 10%); } }
   .concept-area .concept_inner {
     max-width: 1080px;
     width: 100%;
@@ -249,11 +302,10 @@ nav {
     letter-spacing: 5.4px;
     font-size: 1.8rem;
     font-family: 'Roboto Mono', monospace; }
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
       .concept-area h2 {
         margin-bottom: 50px;
-        font-size: 2.5rem;
-        text-align: center; } }
+        font-size: 1.8rem; } }
     .concept-area h2:after {
       display: inline-block;
       width: 90px;
@@ -263,28 +315,34 @@ nav {
       content: "";
       border-top: 1px solid #707070;
       align-items: center; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .concept-area h2:after {
-          display: block;
-          width: 50%;
-          margin: 20px auto; } }
+          width: 44px;
+          margin-left: 22px; } }
   .concept-area ul {
     display: flex;
     justify-content: center; }
-    @media screen and (max-width: 995px) {
-      .concept-area ul {
-        display: block; } }
+    @media screen and (max-width: 959px) {
+      .concept-area ul li {
+        min-width: 164px;
+        min-height: 205px; }
+        .concept-area ul li img {
+          width: 100%;
+          height: 205px;
+          object-fit: cover; } }
     .concept-area ul li:first-child {
       margin-right: 25px; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .concept-area ul li:first-child {
-          margin-right: 0; } }
+          margin-right: 7px; }
+          .concept-area ul li:first-child img {
+            object-position: 88% 100%; } }
   .concept-area dl {
     display: flex;
     justify-content: flex-start;
     margin-top: 65px;
     color: #fff; }
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
       .concept-area dl {
         margin-top: 30px;
         display: block; } }
@@ -294,21 +352,26 @@ nav {
       font-family: "ヒラギノ明朝 ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", sans-serif;
       font-size: 4.0rem;
       letter-spacing: 16px; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .concept-area dl dt {
           margin: 0;
           padding: 0;
+          font-size: 1.8rem;
+          letter-spacing: 7.2px;
           text-align: center; } }
     .concept-area dl dd {
       max-width: 422px;
       font-family: "'ヒラギノ角ゴ Pro W3", "HG明朝E", "ＭＳ Ｐ明朝", sans-serif; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .concept-area dl dd {
           max-width: 100%;
           padding: 30px 10px; } }
 
 .nenu-area {
   padding: 100px 10px 70px; }
+  @media screen and (max-width: 959px) {
+    .nenu-area {
+      padding: 60px 10px 65px; } }
   .nenu-area .nenu_inner {
     max-width: 1080px;
     width: 100%;
@@ -319,11 +382,10 @@ nav {
       letter-spacing: 5.4px;
       font-size: 1.8rem;
       font-family: 'Roboto Mono', monospace; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .nenu-area .nenu_inner h2 {
           margin-bottom: 50px;
-          font-size: 2.5rem;
-          text-align: center; } }
+          font-size: 1.8rem; } }
       .nenu-area .nenu_inner h2:after {
         display: inline-block;
         width: 90px;
@@ -333,26 +395,27 @@ nav {
         content: "";
         border-top: 1px solid #707070;
         align-items: center; }
-        @media screen and (max-width: 995px) {
+        @media screen and (max-width: 959px) {
           .nenu-area .nenu_inner h2:after {
-            display: block;
-            width: 50%;
-            margin: 20px auto; } }
+            width: 44px;
+            margin-left: 22px; } }
     .nenu-area .nenu_inner ul {
       display: flex;
       justify-content: space-between; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .nenu-area .nenu_inner ul {
           display: block; } }
       .nenu-area .nenu_inner ul li {
         width: 274px;
         height: auto; }
-        @media screen and (max-width: 995px) {
+        @media screen and (max-width: 959px) {
           .nenu-area .nenu_inner ul li {
             width: 100%; } }
+        .nenu-area .nenu_inner ul li a:hover img {
+          transform: rotateZ(90deg); }
         .nenu-area .nenu_inner ul li:nth-child(2) {
           margin: 0 10%; }
-          @media screen and (max-width: 995px) {
+          @media screen and (max-width: 959px) {
             .nenu-area .nenu_inner ul li:nth-child(2) {
               margin: 30px 0; } }
         .nenu-area .nenu_inner ul li dl {
@@ -361,6 +424,10 @@ nav {
             padding: 37px 0 34px;
             font-size: 3.0rem;
             text-align: center; }
+            @media screen and (max-width: 959px) {
+              .nenu-area .nenu_inner ul li dl dt {
+                padding: 30px 15px;
+                text-align: left; } }
           .nenu-area .nenu_inner ul li dl dd {
             padding: 0 15px; }
             .nenu-area .nenu_inner ul li dl dd span {
@@ -368,13 +435,16 @@ nav {
               text-align: right;
               margin-top: 34px;
               padding-right: 15px; }
-              @media screen and (max-width: 995px) {
+              @media screen and (max-width: 959px) {
                 .nenu-area .nenu_inner ul li dl dd span {
                   padding-right: 0; } }
 
 .access-area {
   padding: 100px 0 70px;
   background-color: #A193861F; }
+  @media screen and (max-width: 959px) {
+    .access-area {
+      padding: 60px 0 65px; } }
   .access-area .access-inner {
     max-width: 1080px;
     width: 100%;
@@ -386,11 +456,10 @@ nav {
       font-size: 1.8rem;
       font-family: 'Roboto Mono', monospace;
       padding: 0 10px; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .access-area .access-inner h2 {
           margin-bottom: 50px;
-          font-size: 2.5rem;
-          text-align: center; } }
+          font-size: 1.8rem; } }
       .access-area .access-inner h2:after {
         display: inline-block;
         width: 90px;
@@ -400,11 +469,13 @@ nav {
         content: "";
         border-top: 1px solid #707070;
         align-items: center; }
-        @media screen and (max-width: 995px) {
+        @media screen and (max-width: 959px) {
           .access-area .access-inner h2:after {
-            display: block;
-            width: 50%;
-            margin: 20px auto; } }
+            width: 44px;
+            margin-left: 22px; } }
+      @media screen and (max-width: 959px) {
+        .access-area .access-inner h2 {
+          padding: 0 20px; } }
   .access-area .map-area {
     display: flex;
     justify-content: space-between;
@@ -412,19 +483,20 @@ nav {
     padding-left: 104px;
     background-color: #D0C5BA;
     align-items: center; }
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
       .access-area .map-area {
-        display: block;
+        display: flex;
+        flex-direction: column-reverse;
         padding-left: 0; } }
     .access-area .map-area .map-info {
       width: 400px;
       margin-right: 193px;
       color: #fff; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         .access-area .map-area .map-info {
           margin: 0 auto;
-          padding: 30px 0;
-          text-align: center; } }
+          padding: 30px 20px 60px;
+          text-align: left; } }
       .access-area .map-area .map-info h3 {
         margin-bottom: 30px;
         font-size: 2.4rem;
@@ -432,7 +504,7 @@ nav {
         color: #00000038; }
       .access-area .map-area .map-info ul li {
         margin-bottom: 20px; }
-        @media screen and (max-width: 995px) {
+        @media screen and (max-width: 959px) {
           .access-area .map-area .map-info ul li {
             margin-bottom: 10px; } }
     .access-area .map-area .map-block {
@@ -441,6 +513,9 @@ nav {
 
 footer {
   padding: 170px 10px 0px; }
+  @media screen and (max-width: 959px) {
+    footer {
+      padding: 65px 10px 0; } }
   footer .footer-inner {
     position: relative;
     max-width: 1080px;
@@ -448,7 +523,7 @@ footer {
     margin: 0 auto;
     padding: 60px 0;
     border-top: 1px solid #00000038; }
-    @media screen and (max-width: 995px) {
+    @media screen and (max-width: 959px) {
       footer .footer-inner {
         padding: 30px 0 0; } }
     footer .footer-inner h1 {
@@ -456,14 +531,19 @@ footer {
       font-size: 3.2rem;
       color: #7070704D;
       margin-right: 10px; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
         footer .footer-inner h1 {
           width: 100%;
           margin: 30px auto 0;
-          text-align: center; } }
+          padding: 20px 0;
+          text-align: left;
+          font-size: 1.8rem; } }
       footer .footer-inner h1 i:first-child {
         padding-left: 10px;
         padding-right: 5px; }
+        @media screen and (max-width: 959px) {
+          footer .footer-inner h1 i:first-child {
+            padding-left: 120px; } }
       footer .footer-inner h1 i {
         color: #000;
         vertical-align: 5px;
@@ -475,14 +555,19 @@ footer {
       width: 100%;
       padding: 10px;
       background-color: #fff;
-      border: 1px solid #707070;
+      border-bottom: 5px solid #707070;
       font-size: 1.8rem;
       color: #707070;
       text-align: center; }
-      footer .footer-inner button :hover {
-        background-color: #707070;
-        color: #fff; }
-      @media screen and (max-width: 995px) {
+      @media screen and (max-width: 959px) {
+        footer .footer-inner button {
+          width: 184px;
+          margin: 0 auto; } }
+      footer .footer-inner button:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #707070;
+        transform: translateY(4px); }
+      @media screen and (max-width: 959px) {
         footer .footer-inner button {
           display: block;
           position: inherit;
