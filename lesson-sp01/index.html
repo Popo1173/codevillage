@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="main.css" rel="stylesheet">
+        <title>鬼滅課題</title>
+    </head>
+    <body>
+      <p>プログラミングは好きですか</p>
+      <form>
+        <input class="form-check-input" type="radio" name="maker" value="" onclick="radioSwitch()">
+        <label class="form-check-label">はい</label>
+        <input class="form-check-input" type="radio" name="maker" value="" onclick="radioSwitch()">
+        <label class="form-check-label">いいえ</label>
+      </form>  
+      <p class="yesAnswer">よかった!</p>
+      <p class="noAnswer">悲しい</p>
+
+      <form>
+        <label>好きなキャラクターは？
+            <select id="changeSelect1">
+                <option value="0">選択してください</option>
+                <option value="1">炭治郎</option>
+                <option value="2">禰󠄀豆子</option>
+            </select>
+        </label>
+    </form>
+    <div class="boxArea">
+        <section class="box">
+        </section>
+        <section class="box">
+          <p>竈門　炭治郎</p>
+          <img src="https://item-shopping.c.yimg.jp/i/n/ten-ten-store_kmt-mctl-1" />
+        </section>
+        <section class="box">
+          <p>竈門　禰豆子</p>
+          <img src="https://item-shopping.c.yimg.jp/i/n/sorairo-store_msm-07rk1qyl6" />
+        </section>
+      </div> 
+        
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+body {
+    background-image: url("img/bg_img.jpg");
+    background-size: 120px;
+}
+.yesAnswer, .noAnswer {
+    padding: 10px;
+    background-color: fff;
+}
+
+dt, dd {
+    display: inline;
+}
+.boxArea section {
+    display: none;
+}
+img {
+    width: 50%;
+}
