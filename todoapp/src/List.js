@@ -1,12 +1,17 @@
 import React from 'react'
 import Item from './Item'
 
-const List = () => {
+const List = ({todos}) => {
     return(
         <ul>
-            <Item content={'課題をする'} />
-            <Item content={'洗濯をする'} />
-            <Item content={'電話をする'} />
+            {
+                // 配列todosに含まれる要素をItemコンポーネントの呼び出しに変換
+                todos.map((todo, index) => {
+                    return(
+                        <Item content = {todo.content} key={index}/>
+                    )
+                })
+            }
         </ul>
     )
 }
