@@ -32,9 +32,10 @@ function selectCharacter(){
         const boxes = document.getElementsByClassName('box');
         //select valueの値を取得する
         const val = this.value;
+        //boxの数で表示する内容をだし分ける
         for (let i = 0; i < boxes.length; i++) {
             boxes[i].style.display = (i === parseInt(val)) ? 'block' : 'none';
         }
     })
-}
+}ß
 selectCharacter()

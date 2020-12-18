@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 
-const Item = ({content}) => {
+const Item = ({ content, id, deleteTodo }) => {
     const [isDone, setIsDone] = useState(false)
 
+    const  handleDelete = () => {
+        deleteTodo(id)
+    }
     return (
         <li>
-            {/* checkが入ったらsetIsDoneが実行されtrueにり再描画される */}
             <input type='checkbox' onChange={() => {
                 setIsDone(!isDone)
             }} />
-            {/* trueの時打ち消し線styleをあてる */}
             <span style={
-                {textDecoration: isDone ? 'line-through': 'none'}
+                {textDecoration: isDone ? 'line-through' : 'none'}
             }>{content}</span>
+            <button onClick={handleDelete}>削除</button>
         </li>
     )
 }

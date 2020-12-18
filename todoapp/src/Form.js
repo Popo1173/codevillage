@@ -1,28 +1,33 @@
 import React, { useState } from 'react'
 
-const Form = ({todos, setTodos }) => {
+const Form = ({ addTodo }) => {
     const [value, setValue] = useState('')
+    
     const handleSubmit = e => {
         e.preventDefault()
+        if (value === '') {
+            return alert('未入力です');
+          }
+        //todoの配列にvalueを追加する
+        addTodo(value)
+
+         //入力値を空にする
+        setValue('')
         
-        setTodos([
-            ...todos,
-            {
-                content: value
-            }
-        ])
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <input
                 type='text'
-                    onChange={ e =>{
-                        setValue(e.target.value)
-                    }}
+                onChange={e => {
+                    setValue(e.target.value)
+                }}
+                value={value}          
             />
         </form>
-        
     )
 }
+
+
 export default Form
