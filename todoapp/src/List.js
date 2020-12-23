@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
 
-const List = ({ todos }) => {
+const List = ({ todos, deleteTodo, isDone, setIsDone }) => {
     return(
         <ul>
             {
@@ -10,7 +10,10 @@ const List = ({ todos }) => {
                         <Item 
                             content={todo.content}  
                             id={todo.id}
-                            // key={todo.id} 
+                            key={todo.id}
+                            deleteTodo={deleteTodo}
+                            isDone={isDone}
+                            setIsDone={setIsDone}
                         />
                     )
                 })

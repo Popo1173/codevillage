@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 
 const Form = ({ addTodo }) => {
     const [value, setValue] = useState('')
-    
+
+    console.log('value:', value)
+
     const handleSubmit = e => {
         e.preventDefault()
         if (value === '') {
@@ -13,7 +15,6 @@ const Form = ({ addTodo }) => {
 
          //入力値を空にする
         setValue('')
-        
     }
 
     return (
@@ -23,11 +24,10 @@ const Form = ({ addTodo }) => {
                 onChange={e => {
                     setValue(e.target.value)
                 }}
-                value={value}          
+                value={value} 
             />
         </form>
     )
 }
-
 
 export default Form
