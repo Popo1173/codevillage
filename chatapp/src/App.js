@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from './pages/Login'
-import Room from './pages/Room'
 import SignUp from './pages/SignUp'
+import Room from './pages/Room'
 
 import {
     BrowserRouter as Router,
@@ -9,13 +9,15 @@ import {
     Route
 } from 'react-router-dom'
 
+// ...
+
 const App = () => {
     return (
         <Router>
             <Switch>
-                <Router exact path='/' component={Room} />
-                <Router exact path='/login' component={Login} />
-                <Router exact path='/signup' component={Signup} />
+                <Route exact path='/' component={Room} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={SignUp} />
             </Switch>
         </Router>
     )
