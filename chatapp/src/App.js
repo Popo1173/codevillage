@@ -9,7 +9,11 @@ import {
     Route
 } from 'react-router-dom'
 
-import AuthProvider from './AuthService'
+//「export defult」のimportは仕方は以下のようになる
+//import AuthProvider from './AuthService'
+//export{AuthProvider, AuthService}とる場合は以下の書き方
+import { AuthProvider } from './AuthService'
+
 import LoggedInRoute from './LoggedInRoute'
 
 const App = () => {
